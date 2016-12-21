@@ -1,17 +1,14 @@
 
-# Koa API Boilerplate
+# Locota
 
-  Boilerplate API application structure - at least one flavour.
-
-## Installation
-
-  cloneeeee
+  **Lo**comote **co**de **ta**sk
+  Basing of [Koa API Boilerplate](https://github.com/koajs/api-boilerplate)
 
 ## Usage
 
 ```
 
-  Usage: api [options]
+  Usage: bin/start.sh [options]
 
   Options:
 
@@ -29,12 +26,6 @@
 ##  Tests
 
   Run `make test`
-
-## API Versioning
-
-  Use a proxy for `/v1`, `/v2` etc and launch new `api(1)` programs, don't version
-  in the same application, it's brittle, bloaty and pointless.
-
 # License
 
   MIT
