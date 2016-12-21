@@ -1,0 +1,32 @@
+{
+  "name": "koa-api-boilerplate",
+  "version": "0.0.1",
+  "repository": "koajs/api-boilerplate",
+  "description": "Koa API boilerplate application",
+  "keywords": [
+    "koa",
+    "boilerplate",
+    "api"
+  ],
+  "dependencies": {
+    "co-body": "0.0.1",
+    "commander": "~2.2.0",
+    "debug": "*",
+    "extend": "^3.0.0",
+    "koa": "~0.6.1",
+    "koa-compress": "1.0.7",
+    "koa-logger": "~1.2.1",
+    "koa-resource-router": "^0.3.3",
+    "koa-response-time": "~1.0.2",
+    "koa-router": "~3.1.4",
+    "koa-send": "^3.2.0",
+    "path-to-regexp": "^1.7.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "supertest": "~0.8.2"
+  },
+  "license": "MIT"
+}
