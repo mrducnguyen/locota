@@ -1,10 +1,11 @@
 
-var request = require('supertest');
-var locota = require('../..');
+var request = require('supertest'),
+    locota = require('locota'),
+    should = require('should');
 
 describe('GET /locota/airports?q=melb', function(){
   it('should respond with Melbourne', function(done){
-    var app = api();
+    var app = locota();
 
     request(app.listen())
     .get('/locota/airports?q=melb')
@@ -19,7 +20,7 @@ describe('GET /locota/airports?q=melb', function(){
 
 describe('GET /locota/airports?q=syd', function(){
   it('should respond with Sydney', function(done){
-    var app = api();
+    var app = locota();
 
     request(app.listen())
     .get('/locota/airports?q=syd')

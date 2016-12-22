@@ -1,6 +1,6 @@
 
 var request = require('supertest');
-var api = require('../..');
+var api = require('locota');
 
 describe('GET /stats', function(){
   it('should respond with stats', function(done){

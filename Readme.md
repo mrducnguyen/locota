@@ -1,8 +1,7 @@
 
 # Locota
 
-  **Lo**comote **co**de **ta**sk
-  Basing of [Koa API Boilerplate](https://github.com/koajs/api-boilerplate)
+  **Lo**comote **co**de **ta**sk basing off [Koa API Boilerplate](https://github.com/koajs/api-boilerplate)
 
 ## Usage
 
@@ -16,6 +15,7 @@
     -H, --host <host>     specify the host [0.0.0.0]
     -p, --port <port>     specify the port [4000]
     -b, --backlog <size>  specify the backlog size [511]
+    -e --environment <environment>  specify the running environment [development]
 
 ```
 

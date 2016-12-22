@@ -1,7 +1,7 @@
 {
-  "name": "Airport Search API",
+  "name": "airports",
   "description": "Airport search using Locomote Flight API",
   "routes": {
-    "GET /airports/?\\?q=:query": "getAirports"
+    "GET /airports/?": "getAirports"
   }
 }

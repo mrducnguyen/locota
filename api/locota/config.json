@@ -1,5 +1,5 @@
 {
-  "name": "Locomote Flight API",
+  "name": "locota",
   "description": "Locomote API middleware version 1 support /airlines, /airports and /search",
   "apiEndpoints": {
     "development" : {

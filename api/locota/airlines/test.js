@@ -1,6 +1,7 @@
 
-var request = require('supertest');
-var locota = require('../..');
+var request = require('supertest'),
+    locota = require('locota'),
+    should = require('should');
 
 describe('GET /locota/airlines', function(){
   it('should respond with Airlines', function(done){

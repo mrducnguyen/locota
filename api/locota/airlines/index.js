@@ -4,9 +4,11 @@
  * support GET only (list all)
  *
  */
-var request = require('request');
+var ContinuousStream = require('lib/continuous-stream'),
+    util = require('lib/util');
 
-exports.index = function *(){
-  //TODO: call airlines API
-  this.body = "To be impmented";
+exports.getAirlines = function *(){
+  this.type = 'json';
+  var stream = this.body = ContinuousStream();
+  util.apiConfig(exports.conf).requestEndpoint('airlines').pipe(stream);
 };

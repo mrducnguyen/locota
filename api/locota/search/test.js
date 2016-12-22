@@ -1,10 +1,11 @@
 
-var request = require('supertest');
-var api = require('../..');
+var request = require('supertest'),
+    locota = require('locota'),
+    should = require('should');
 
 describe('GET /locota/search?from=MEL&to=SYD&date=2017-01-01', function(){
   it('should respond with Flights from Qantas and Singapore airlines', function(done){
-    var app = api();
+    var app = locota();
 
     request(app.listen())
     .get('/locota/search?from=MEL&to=SYD&date=2017-01-01')

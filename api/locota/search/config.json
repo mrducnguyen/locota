@@ -1,7 +1,6 @@
 {
-  "name": "Search middleware",
   "description": "Searching for flighs using Locomote Flight API",
   "routes": {
-    "GET /search/?\\?from=:from&to=:to&date=:date": "search"
+    "GET /search/?": "search"
   }
 }
