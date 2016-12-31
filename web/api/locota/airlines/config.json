@@ -1,0 +1,7 @@
+{
+	"name": "airlines",
+	"description": "Return all ariline codes from Flight API",
+	"routes": {
+		"GET /airlines/?": "getAirlines"
+	}
+}

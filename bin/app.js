@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-var program = require('commander');
-var locota = require('locota');
+var program = require('commander'),
+	locota = require('locota'),
+	extend = require('extend');
 
 // options
 program
-  .option('-H, --host <host>', 'specify the host [0.0.0.0]', '0.0.0.0')
-  .option('-p, --port <port>', 'specify the port [4000]', '4000')
-  .option('-b, --backlog <size>', 'specify the backlog size [511]', '511')
-  .option('-e, --environment <environment>', 'specify the running environment, supported environments: dev[elopment]|test|stage|prod[uction]')
-  .parse(process.argv);
+	.option('-H, --host <host>', 'specify the host')
+	.option('-p, --port <port>', 'specify the port')
+	.option('-b, --backlog <size>', 'specify the backlog size')
+	.parse(process.argv);
 
 var config;
 try {
@@ -19,12 +19,28 @@ try {
 	config = {};
 }
 
-if (program.environment) {
-	config.environment = program.environment;
-}
+config = validateConfig(config);
 
 app = locota(config);
 
 // listen
-app.listen(program.port, program.host, ~~program.backlog);
-console.log('Listening on %s:%s', program.host, program.port);
+app.listen(config.port, config.host, ~~config.backlog);
+console.log('Listening on %s:%s', config.host, config.port);
+
+function validateConfig(config) {
+	// Program arguments > Config file > Defaults
+	config = extend({
+		host: '0.0.0.0',
+		port: '3000',
+		backlog: 511,
+		webRoot: '/web',
+		apiPath: '/api',
+		staticResourcePath: '/static'
+	}, config, {
+		host: program.host,
+		port: program.port,
+		backlog: program.backlog
+	});
+
+	return config;
+}

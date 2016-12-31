@@ -1,1 +1,5 @@
 node_modules/
+web/static/client/html/vendor/
+web/static/client/html/js/
+web/static/client/html/css/
+web/static/client/build/

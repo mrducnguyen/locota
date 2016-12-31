@@ -17,12 +17,12 @@
     "koa-compress": "1.0.7",
     "koa-logger": "~1.2.1",
     "koa-qs": "^2.0.0",
-    "koa-resource-router": "^0.3.3",
     "koa-response-time": "~1.0.2",
     "koa-router": "~3.1.4",
     "koa-send": "^3.2.0",
     "path-to-regexp": "^1.7.0",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "validator": "^6.2.0"
   },
   "devDependencies": {
     "mocha": "*",

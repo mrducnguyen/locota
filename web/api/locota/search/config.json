@@ -1,0 +1,7 @@
+{
+	"description": "Searching for flighs using Locomote Flight API",
+	"delimiter": "\n\n",
+	"routes": {
+		"GET /search/?": "search"
+	}
+}

@@ -1,7 +1,0 @@
-{
-  "name": "airports",
-  "description": "Airport search using Locomote Flight API",
-  "routes": {
-    "GET /airports/?": "getAirports"
-  }
-}

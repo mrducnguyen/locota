@@ -6,13 +6,13 @@
       "baseUrl" : "http://node.locomote.com/code-task",
       "airlines" : "/airlines",
       "airports" : "/airports\\?q=:query",
-      "flight_search" : "/flight_search/:airlineCode\\?date=:date&from=:fromAirport&to=:toAirport"
+      "flight_search" : "/flight_search/:airlineCode\\?date=:date&from=:from&to=:to"
     },
     "stage" : {
       "baseUrl" : "http://node.locomote.com/code-task",
       "airlines" : "/airlines",
       "airports" : "/airports\\?q=:query",
-      "flight_search" : "/flight_search/:airlineCode\\?date=:date&from=:fromAirport&to=:toAirport"
+      "flight_search" : "/flight_search/:airlineCode\\?date=:date&from=:from&to=:to"
     }
   }
 }
