@@ -6,6 +6,7 @@ var responseTime = require('koa-response-time'),
 	compress = require('koa-compress'),
 	logger = require('koa-logger'),
 	router = require('koa-router'),
+	cors = require('koa-cors'),
 	send = require('koa-send'),
 	koa = require('koa'),
 	load = require('./lib/load'),
@@ -50,6 +51,16 @@ function api(opts) {
 	app.opts = opts;
 	app.env = global.__ENVIRONMENT = env;
 
+	// Global error caching
+	app.use(function*(next) {
+		try {
+			yield next;
+		} catch (err) {
+			this.status = err.status || 500;
+			this.body = shouldShowErrorDetails() ? err.message : 'An error has occured, please try again later';
+			this.app.emit('error', err, this);
+		}
+	});
 	// logging
 
 	if ('test' != env) app.use(logger());
@@ -59,6 +70,15 @@ function api(opts) {
 
 	// compression
 	app.use(compress());
+
+	// Cross-origin requests
+	app.use(cors({
+		origin: true,
+		maxAge: true,
+		methods: 'GET',
+		headers: 'Accept,Content-Type,Accept-Encoding',
+		expose: 'Transfer-Encoding,Chunk-Delimiter'
+	}));
 
 	// boot
 	app = querySafe(app);
@@ -80,6 +100,10 @@ function api(opts) {
 	return app;
 }
 
+
+function shouldShowErrorDetails() {
+	return global.__ENVIRONMENT === 'mock' || global.__ENVIRONMENT === 'development' || global.__ENVIRONMENT === 'test';
+}
 
 function validate(opts) {
 	// path should start with /

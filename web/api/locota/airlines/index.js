@@ -14,6 +14,6 @@ exports.getAirlines = function*() {
 		return;
 	}
 
-	var stream = this.body = ContinuousStream();
+	var stream = this.body = new ContinuousStream();
 	util.apiConfig(exports.conf).requestEndpoint('airlines').pipe(stream);
 };

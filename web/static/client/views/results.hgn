@@ -1,0 +1,29 @@
+<h2>Available flights
+	<br>
+	<small>on <span class="text-primary">{{#formatDateFull}}{{searchParams.date}}{{/formatDateFull}}</span> from <strong class="text-primary">{{searchParams.from.airportName}} ({{searchParams.from.airportCode}})</strong> to <strong class="text-primary">{{searchParams.to.airportName}} ({{searchParams.to.airportCode}})</strong></small>
+</h2>
+{{> resultFilter}}
+<div class="date-range">
+  <ul class="nav nav-tabs nav-justified">
+    {{#dateRange}}
+    <li role="presentation"{{#active}} class="active"{{/active}}><a href="#{{date}}" class="travel-date{{#active}} {{/active}}">{{date}}</a></li>
+    {{/dateRange}}
+  </ul>
+</div>
+<div class="table-responsive">
+  <table class="table table-stripped table-hover">
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Flight</th>
+        <th>Depart</th>
+        <th>Arrive</th>
+        <th>Duration</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{> resultRow }}
+    </tbody>
+  </table>
+</div>

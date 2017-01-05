@@ -1,6 +1,17 @@
 // This shows a full config file!
 
 module.exports = function(grunt) {
+	var vendorList = [
+		'jquery/dist/**',
+		'bootstrap/dist/**',
+		'bootstrap-datepicker/dist/**',
+		'select2/dist/**',
+		'select2-bootstrap-theme/dist/**',
+		'flag-icon-css/css/**',
+		'flag-icon-css/flags/**',
+		'lodash/lodash*.js'
+	];
+
 	grunt.initConfig({
 		watch: {
 			css: {
@@ -34,7 +45,8 @@ module.exports = function(grunt) {
 				src: 'views/**/*.hgn',
 				dest: 'scripts/templates.js',
 				options: {
-					binderName: 'nodejs'
+					binderName: 'nodejs',
+					exposeTemplates: true
 				}
 			}
 		},
@@ -58,12 +70,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'node_modules/',
-					src: [
-						'jquery/dist/**',
-						'bootstrap/dist/**',
-						'bootstrap-datepicker/dist/**',
-						'lodash/lodash*.js'
-					],
+					src: vendorList,
 					dest: 'html/vendor'
 				}]
 			},
@@ -71,19 +78,15 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'node_modules/',
-					src: [
-						'jquery/dist/**',
-						'bootstrap/dist/**',
-						'bootstrap-datepicker/dist/**',
-						'lodash/lodash*.js'
-					],
+					src: vendorList,
 					dest: 'build/vendor'
 				}, {
 					expand: true,
 					cwd: 'html/',
 					src: [
 						'js/**/*.min.js',
-						'css/**'
+						'css/**',
+						'img/**'
 					],
 					dest: 'build'
 				}, {
@@ -128,6 +131,7 @@ module.exports = function(grunt) {
 					browser: 'firefox',
 					watchTask: true,
 					directory: true,
+					port: 4000,
 					server: {
 						baseDir: 'html'
 					}

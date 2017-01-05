@@ -1,0 +1,8 @@
+<div class="loading">
+  {{#message}}
+  <h4 class="text-info">{{message}}</h4>
+  {{/message}}
+  {{^message}}
+  <h4 class="text-info">Loading, please wait...</h4>
+  {{/message}}
+</div>

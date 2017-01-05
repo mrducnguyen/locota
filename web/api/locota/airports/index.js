@@ -14,7 +14,7 @@ exports.getAirports = function*() {
 		return;
 	}
 
-	var stream = this.body = ContinuousStream();
+	var stream = this.body = new ContinuousStream();
 	var error = validateQuery(this.query);
 	if (error) {
 		this.status = 400;

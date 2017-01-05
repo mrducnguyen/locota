@@ -1,18 +1,19 @@
 {
   "name": "locota",
   "description": "Locomote API middleware version 1 support /airlines, /airports and /search",
+  "encoding": "utf8",
   "apiEndpoints": {
-    "development" : {
-      "baseUrl" : "http://node.locomote.com/code-task",
-      "airlines" : "/airlines",
-      "airports" : "/airports\\?q=:query",
-      "flight_search" : "/flight_search/:airlineCode\\?date=:date&from=:from&to=:to"
+    "development": {
+      "baseUrl": "http://node.locomote.com/code-task",
+      "airlines": "/airlines",
+      "airports": "/airports\\?q=:query",
+      "flight_search": "/flight_search/:airlineCode\\?date=:date&from=:from&to=:to"
     },
-    "stage" : {
-      "baseUrl" : "http://node.locomote.com/code-task",
-      "airlines" : "/airlines",
-      "airports" : "/airports\\?q=:query",
-      "flight_search" : "/flight_search/:airlineCode\\?date=:date&from=:from&to=:to"
+    "stage": {
+      "baseUrl": "http://node.locomote.com/code-task",
+      "airlines": "/airlines",
+      "airports": "/airports\\?q=:query",
+      "flight_search": "/flight_search/:airlineCode\\?date=:date&from=:from&to=:to"
     }
   }
 }

@@ -1,0 +1,6 @@
+{{#message}}
+<h4 class="text-danger">{{message}}</h4>
+{{/message}}
+{{#details}}
+<p class="text-info">{{details}}</p>
+{{/details}}

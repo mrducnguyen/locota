@@ -13,7 +13,7 @@ exports.search = function*() {
 
 	var mock = util.mock(exports.conf, this);
 	if (mock) {
-		mock();
+		yield mock();
 		return;
 	}
 
@@ -26,7 +26,7 @@ exports.search = function*() {
 	} else {
 		this.set('Transfer-Encoding', 'chunked');
 		this.set('Chunk-Delimiter', util.escape(exports.conf.delimiter));
-		var resultStream = this.body = ContinuousStream();
+		var resultStream = this.body = new ContinuousStream();
 		//var resultStream = this.body = ContinuousStream();
 		yield new Promise((resolve, reject) => {
 			util.apiConfig(exports.conf).requestEndpoint('airlines')

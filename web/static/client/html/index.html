@@ -6,8 +6,12 @@
 	<title>Locomote code task - sample client</title>
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="vendor/select2/dist/css/select2.css">
+  <link rel="stylesheet" type="text/css" href="vendor/select2-bootstrap-theme/dist/select2-bootstrap.css">
 
+  <link rel="stylesheet" type="text/css" href="vendor/flag-icon-css/css/flag-icon.css">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -32,10 +36,12 @@
 			</div><!--/.navbar-collapse -->
 		</div>
 	</nav>
-
-	<div class="container" id="searchView">
+	<div class="container search-view" id="searchView">
+		<div class="loading">
+			<h4 class="text-info">Loading. Please wait...</h4>
+		</div>
 	</div>
-	<div class="container" id="resultView">
+	<div class="container result-view" id="resultView">
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>

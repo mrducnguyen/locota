@@ -1,27 +1,21 @@
-<h1>Search for flights</h1>
-<form action="" class="form-inline">
+<h2>Search for flights</h2>
+<form class="search-form">
 	<div class="form-group">
 		<label for="fromAirport" class="control-label">From</label>
-		<div>
-			<input type="text" name="from" class="form-control" id="fromAiport" placeholder="From Airport" required="">
-		</div>
+		<select id="fromAiport" name="from" class="form-control airport-field" required=""></select>
 	</div>
 	<div class="form-group">
 		<label for="toAirport" class="control-label">To</label>
-		<div>
-			<input type="text" name="to" id="toAirport" class="form-control" placeholder="To Airport" required="">
-		</div>
+		<select id="toAirport" name="to" class="form-control airport-field" required=""></select>
 	</div>
 	<div class="form-group">
 		<label for="" class="control-label">Date</label>
-		<div>
-			<div class="input-group date" data-date-format="dd/mm/yyyy" data-date-start-date="+1d" data-date-end-date="+1y">
-				<input type="text" name="date" id="travelDate" class="form-control" value="" required="">
-				<div class="input-group-addon">
-					<span class="glyphicon glyphicon-th"></span>
-				</div>
-			</div>
-		</div>
+		<div class="input-group date" data-date-format="dd/mm/yyyy" data-date-start-date="+0d" data-date-end-date="+1y">
+      <input type="text" name="date" id="travelDate" class="form-control" value="" required="" placeholder="">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+      </div>
+    </div>
 	</div>
 	<div class="button-container">
 		<button type="submit" class="btn btn-default">Search</button>

@@ -1,0 +1,10 @@
+{
+	"name": "locota-api",
+	"description": "Locomote code task API client config",
+	"api": {
+		"baseUrl": "http://localhost:3000/api/locota",
+		"airlines": "/airlines",
+		"airports": "/airports\\?q=:query",
+		"search": "/search\\?date=:date&from=:from&to=:to"
+	}
+}
