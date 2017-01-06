@@ -18,7 +18,8 @@ function searchResult(search) {
 			lastPosition: 0
 		};
 
-	setDateUtils(results);
+	registerHelpers();
+
 	search
 		.on('beforeSubmit', function(form, params) {
 			results.searchParams = $.extend({}, params);
@@ -37,6 +38,7 @@ function searchResult(search) {
 			displayError(err);
 		});
 
+	// TODO: implement retry
 	util.getAirlines({
 		callback: function(err, res, data) {
 			results.airlines = data;
@@ -86,45 +88,42 @@ function searchResult(search) {
 		console.log(results.dateRange);
 	}
 
-	function setDateUtils(results) {
-		$.extend(results, {
-			formatDateFull: function() {
-				console.log('formatDateFull');
-				console.log(this);
-				return function(text, render) {
-					console.log(arguments);
-					console.log(text);
-					return text;
-					var val = render(text);
-					return moment(val).format('dddd, DD MMMM YYYY');
-				};
-			},
-			formatDateTime: function() {
-				return function(text, render) {
-					console.log(arguments);
-					console.log(text);
-					var val = render(text);
-					return moment(val).format('DD MMM YYYY, HH:mm:ss Z');
-				};
-			},
-			formatDuration: function() {
-				return function(text, render) {
-					console.log(arguments);
-					console.log(text);
-					var val = render(text);
-					return moment().duration(val, 'minutes').humanize();
-				}
-			},
-			formatMoney: function() {
-				return function(text, render) {
-					console.log(arguments);
-					console.log(text);
-					var val = render(text);
-					return new Intl.NumberFormat('en-AU').format(val);
-				}
-			},
+	function registerHelpers() {
+		function isNumeric(n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
+		}
+
+		Handlebars.registerHelper('formatDateFull', function(value) {
+			if (moment.isDate(value)) {
+				return moment(value).format('dddd, DD MMMM YYYY');
+			} else {
+				return value;
+			}
 		});
 
+		Handlebars.registerHelper('formatDateTimeString', function(value) {
+			return moment(value, 'YYYY-MM-DDTHH:mm:ss+Z').format('DD MMM YYYY, HH:mm:ss Z');
+		});
+
+		Handlebars.registerHelper('formatDuration', function(value) {
+			if (Number.isInteger(value)) {
+				var minute = parseInt(value);
+				var plural = minute == 1 ? '' : 's';
+				return minute + ' minute' + plural + ' (' + moment.duration(parseInt(value), 'minutes').humanize() + ')';
+			} else {
+				return value;
+			}
+		});
+
+		Handlebars.registerHelper('formatAUD', function(value) {
+			if (isNumeric(value))
+				return new Intl.NumberFormat('en-AU', {
+					style: 'currency',
+					currency: 'AUD'
+				}).format(value);
+			else
+				return value;
+		});
 	}
 }
 

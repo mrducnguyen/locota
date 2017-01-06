@@ -12,6 +12,20 @@ module.exports = function(grunt) {
 		'lodash/lodash*.js'
 	];
 
+	function viewNameFromFile(filePath) {
+		var firstIdx = filePath.lastIndexOf('/'),
+			lastIdx = filePath.lastIndexOf('.hbs');
+		if (firstIdx < 0) {
+			firstIdx = 0;
+		} else {
+			firstIdx += 1; // keep the filename only
+		}
+		if (lastIdx >= 0) {
+			return filePath.slice(firstIdx, lastIdx);
+		}
+		return filePath.slice(firstIdx);
+	}
+
 	grunt.initConfig({
 		watch: {
 			css: {
@@ -23,8 +37,8 @@ module.exports = function(grunt) {
 				tasks: ['browserify']
 			},
 			templates: {
-				files: ['views/**/*.hgn'],
-				tasks: ['hogan']
+				files: ['views/**/*.hbs'],
+				tasks: ['handlebars']
 			}
 		},
 
@@ -40,13 +54,19 @@ module.exports = function(grunt) {
 			}
 		},
 
-		hogan: {
+		handlebars: {
 			templates: {
-				src: 'views/**/*.hgn',
-				dest: 'scripts/templates.js',
+				files: {
+					'scripts/templates.js': ['views/**/*.hbs']
+				},
 				options: {
-					binderName: 'nodejs',
-					exposeTemplates: true
+					node: true,
+					processName: function(filePath) {
+						return viewNameFromFile(filePath);
+					},
+					processPartialName: function(filePath) {
+						return viewNameFromFile(filePath);
+					}
 				}
 			}
 		},
@@ -144,7 +164,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-hogan');
+	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -152,8 +172,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
 	// define tasks
-	grunt.registerTask('init', ['clean:init', 'copy:init', 'sass', 'browserify', 'hogan']);
-	grunt.registerTask('build', ['sass', 'browserify', 'hogan', 'uglify:build', 'clean:build', 'copy:build']);
+	grunt.registerTask('init', ['clean:init', 'copy:init', 'sass', 'browserify', 'handlebars']);
+	grunt.registerTask('build', ['sass', 'browserify', 'handlebars', 'uglify:build', 'clean:build', 'copy:build']);
 	grunt.registerTask('dist', ['clean:dist', 'build', 'compress:dist']);
 	// define default task
 	grunt.registerTask('default', ['browserSync', 'watch']);

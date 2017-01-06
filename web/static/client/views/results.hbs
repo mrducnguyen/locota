@@ -1,13 +1,13 @@
 <h2>Available flights
 	<br>
-	<small>on <span class="text-primary">{{#formatDateFull}}{{searchParams.date}}{{/formatDateFull}}</span> from <strong class="text-primary">{{searchParams.from.airportName}} ({{searchParams.from.airportCode}})</strong> to <strong class="text-primary">{{searchParams.to.airportName}} ({{searchParams.to.airportCode}})</strong></small>
+	<small>on <span class="text-primary">{{formatDateFull searchParams.date}}</span> from <strong class="text-primary">{{searchParams.from.airportName}} ({{searchParams.from.airportCode}})</strong> to <strong class="text-primary">{{searchParams.to.airportName}} ({{searchParams.to.airportCode}})</strong></small>
 </h2>
-{{> resultFilter}}
+{{> _resultFilter}}
 <div class="date-range">
   <ul class="nav nav-tabs nav-justified">
-    {{#dateRange}}
+    {{#each dateRange}}
     <li role="presentation"{{#active}} class="active"{{/active}}><a href="#{{date}}" class="travel-date{{#active}} {{/active}}">{{date}}</a></li>
-    {{/dateRange}}
+    {{/each}}
   </ul>
 </div>
 <div class="table-responsive">
@@ -23,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      {{> resultRow }}
+      {{> _resultRow }}
     </tbody>
   </table>
 </div>

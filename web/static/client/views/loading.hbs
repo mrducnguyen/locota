@@ -1,8 +1,7 @@
 <div class="loading">
-  {{#message}}
+  {{#if message}}
   <h4 class="text-info">{{message}}</h4>
-  {{/message}}
-  {{^message}}
+  {{else}}
   <h4 class="text-info">Loading, please wait...</h4>
-  {{/message}}
+  {{/if}}
 </div>
