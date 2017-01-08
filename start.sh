@@ -40,7 +40,7 @@ else
 		mkdir logs
 	fi
 
-	DEBUG=locota,koa-router,koa-send node bin/app.js "$@" 2>logs/debug.log 1>logs/runtime.log &
+	DEBUG=locota,koa-router,koa-send nohup node bin/app.js "$@" 2>logs/debug.log 1>logs/runtime.log &
 	PID=$!
 	echo $PID > "locota.pid"
 
