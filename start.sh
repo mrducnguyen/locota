@@ -46,5 +46,6 @@ else
 
 	echo "Server started (PID: $PID). Use 'stop.sh' to stop server. Check logs folder."
 
+	sleep 2
 	./node_modules/.bin/opn http://localhost:3000/static/client/build/index.html
 fi
