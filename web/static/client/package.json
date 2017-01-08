@@ -1,6 +1,7 @@
 {
 	"name": "locota-sample-client",
 	"version": "1.0.0",
+	"repository": "mrducnguyen/locota",
 	"description": "Sample client to consume locota middleware",
 	"author": "Duc Nguyen <mrducnguyen@gmail.com",
 	"license": "MIT",
