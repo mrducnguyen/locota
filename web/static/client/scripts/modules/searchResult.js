@@ -237,10 +237,7 @@ function registerHelpers() {
 
 	Handlebars.registerHelper('formatAUD', function(value) {
 		if (isNumeric(value)) {
-			return new Intl.NumberFormat('en-AU', {
-				style: 'currency',
-				currency: 'AUD'
-			}).format(value);
+			return '$ ' + value.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 		}
 
 		return value;
