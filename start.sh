@@ -27,7 +27,10 @@ export NODE_PATH="."
 export NODE_ENV="stage"
 
 if [[ $1 == "test" ]]; then
-  ./node_modules/.bin/mocha --require should --reporter spec --harmony --bail --recursive web/api/locota/search
+	if [[ ! -e "./node_modules/.bin/mocha" ]]; then
+		npm install
+	fi
+  ./node_modules/.bin/mocha --require should --reporter spec --harmony --bail --recursive web/api/
 else
 	if [[ -e "locota.pid" ]]; then
 		kill -9 `cat ./locota.pid`
