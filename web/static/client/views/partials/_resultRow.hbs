@@ -1,6 +1,6 @@
 {{#flights}}
 <tr id="flight_{{key}}">
-  <td><img src="img/airlines/{{airline.code}}.png" alt="{{airline.name}}" title="{{airline.name}}"></td>
+  <td><img class="airline-logo" src="img/airlines/{{airline.code}}.png" alt="{{airline.name}}" title="{{airline.name}}"></td>
   <td>Flight number: <strong>{{flightNum}}</strong><br><em>{{plane.shortName}}</em></td>
   <td>{{formatDateTimeString start.dateTime}} ({{start.timeZone}})</td>
   <td>{{formatDateTimeString finish.dateTime}} ({{finish.timeZone}})</td>

@@ -57,11 +57,11 @@ function searchModule() {
 			templateSelection: formatAirportName
 		});
 
-		searchView
-			.find('.search-form')
+		var searchForm = searchView.find('.search-form');
+		searchForm
 			.submit(function(e) {
-				var form = $(this),
-					params = {
+				var form = $(this);
+				var params = {
 						date: form.find('.date').datepicker('getDate'),
 						from: form.find('[name=from]').select2('data')[0],
 						to: form.find('[name=to]').select2('data')[0],
@@ -71,6 +71,7 @@ function searchModule() {
 						from: params.from.airportCode,
 						to: params.to.airportCode
 					};
+
 				// convert array to object
 				searchView.children('.loading').remove();
 				if (searchRequest) {
@@ -103,6 +104,15 @@ function searchModule() {
 				e.preventDefault();
 				return false;
 			});
+
+		// change date emited back from searchResults
+		// TODO: extended EventEmitter instead of returning it and expose a function for doing this
+		emitter.on('changeDate', function(date) {
+			searchForm.find('.date').datepicker('update', date);
+			process.nextTick(function() {
+				searchForm.submit();
+			});
+		});
 	});
 
 	return emitter;

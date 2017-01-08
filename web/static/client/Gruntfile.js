@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 				tasks: ['sass']
 			},
 			js: {
-				files: ['scripts/**/*.js'],
+				files: ['scripts/**/*.js', 'scripts/**/*.json'],
 				tasks: ['browserify']
 			},
 			templates: {
@@ -176,5 +176,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', ['sass', 'browserify', 'handlebars', 'uglify:build', 'clean:build', 'copy:build']);
 	grunt.registerTask('dist', ['clean:dist', 'build', 'compress:dist']);
 	// define default task
-	grunt.registerTask('default', ['browserSync', 'watch']);
+	grunt.registerTask('default', ['init', 'browserSync', 'watch']);
 };

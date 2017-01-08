@@ -1,5 +1,4 @@
 var $ = require('jquery'),
-	_ = require('lodash'),
 	handlebars = require('handlebars/runtime');
 
 // global modules
@@ -13,5 +12,12 @@ require('select2');
 // this is the only way precompiled templates will work with custom helpers
 global.Handlebars = handlebars;
 
+$(function() {
+	// render navigation
+	var templates = require('./templates');
+	$('.loading')
+		.before(templates['main']({}))
+		.remove();
+});
 // custom modules
 require('./modules/search.js');

@@ -1,18 +1,19 @@
 <div class="filter">
-  <h3>Filter flights</h3>
-  <form>
+  <h4>Filter flights</h4>
+  <form class="form-inline">
     <div class="form-group">
-      <label for="filterAirline" class="control-label">From</label>
-      <select id="filterAirline" name="airline" class="form-control" required="">
-      	{{#airlines}}
+      <label for="filterResultAirline" class="control-label">Airline</label>
+      <select id="filterResultAirline" name="airline" class="form-control filter-airline" required="">
+      	<option value="all" selected="">All</option>
+      	{{#each airlines}}
       	<option value="{{code}}">{{name}}</option>
-      	{{/airlines}}
+      	{{/each}}
       </select>
     </div>
     <div class="form-group">
-      <label for="sortBy" class="control-label">From</label>
-      <select id="sortBy" name="sort" class="form-control">
-        <option value="price-asc">Price (lowest first)</option>
+      <label for="filterResultSort" class="control-label">Sort</label>
+      <select id="filterResultSort" name="sort" class="form-control sort-result">
+        <option value="price-asc" selected="">Price (lowest first)</option>
         <option value="price-desc">Price (highest first)</option>
         <option value="time-asc">Time (earliest first)</option>
         <option value="time-desc">Time (latest first)</option>

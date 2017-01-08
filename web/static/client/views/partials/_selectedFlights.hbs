@@ -1,0 +1,16 @@
+<strong>Selected flight:</strong>
+<ul>
+	<li>Airline: {{airline.name}}</li>
+	<li>Flight number: <strong>{{flightNum}}</strong></li>
+  <li>Depart: {{formatDateTimeString start.dateTime}} ({{start.timeZone}})</li>
+  <li>Arrive: {{formatDateTimeString finish.dateTime}} ({{finish.timeZone}})</li>
+  <li>Price: {{formatAUD price}}</li></li>
+</ul>
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#flightObjectDetails" aria-expanded="false" aria-controls="collapseExample">
+  Show object data
+</a>
+<div class="collapse" id="flightObjectDetails">
+  <pre>
+		{{json .}}
+	</pre>
+</div>

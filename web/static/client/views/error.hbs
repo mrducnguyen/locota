@@ -1,6 +1,8 @@
-{{#message}}
-<h4 class="text-danger">{{message}}</h4>
-{{/message}}
-{{#details}}
-<p class="text-info">{{details}}</p>
-{{/details}}
+{{#if message}}
+	<h4 class="text-danger">{{message}}</h4>
+	{{#if error}}
+	<p class="text-info">{{error}}</p>
+	{{/if}}
+{{else}}
+	<h4 class="text-danger">An error has occured. Please try again later.</h4>
+{{/if}}

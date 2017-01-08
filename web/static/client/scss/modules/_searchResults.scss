@@ -1,0 +1,30 @@
+.result-view {
+	padding-top: 20px;
+
+	.nav-tabs {
+		display: flex;
+
+		li {
+			display: flex;
+			flex: 1;
+
+			a {
+				flex: 1;
+			}
+		}
+	}
+
+	.result-table {
+		tr {
+			cursor: pointer;
+		}
+	}
+
+	.airline-logo {
+		width: 120px;
+	}
+
+	.result-filter {
+		padding: 10px 0;
+	}
+}

@@ -6,7 +6,6 @@
 	"license": "MIT",
 	"devDependencies": {
 		"grunt": "^1.0.1",
-		"grunt-browser-sync": "^2.2.0",
 		"grunt-browserify": "^5.0.0",
 		"grunt-cli": "^1.2.0",
 		"grunt-contrib-clean": "^1.0.0",
@@ -30,5 +29,8 @@
 		"request": "^2.79.0",
 		"select2": "^4.0.3",
 		"select2-bootstrap-theme": "0.1.0-beta.9"
+	},
+	"optionalDependencies": {
+		"grunt-browser-sync": "^2.2.0"
 	}
 }
