@@ -73,7 +73,7 @@
                 |-- (similar to airlines)
 ~~~~
 
-  #### Internet connection and Proxy
+#### Internet connection and Proxy
 
   API middlewares will need to access http://node.locomote.com/code-task. [Request](https://www.npmjs.com/package/request) module is being used to make request.
 
