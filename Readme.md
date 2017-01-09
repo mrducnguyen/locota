@@ -4,7 +4,7 @@
   **Lo**comote **co**de **ta**sk basing off [Koa API Boilerplate](https://github.com/koajs/api-boilerplate)
 
 ## Installation
-  
+
   1. Clone or download the repo
   1. Navigate to the repo folder
   1. Allow executation of the shell scripts `chmod 755 start.sh stop.sh`
@@ -19,10 +19,6 @@
 ```
 
   Usage: ./start.sh [options]
-
-  Operation:
-
-    test                  start mocha test
 
   Underlying Node script which will be run: ./bin/app.js  All options will be passed through to it
     -h, --help            output usage information
@@ -48,7 +44,7 @@
          |-- mock : mock util used to mock data services by responding with pre-saved data in `response-export.json` file
          |-- should-custom : extension of `should.js` to provide addtional custom assertions
          |-- util : general helpers, including API calls to http://node.locomote.com/code-task
-    |     
+    |
     |-- web
          |-- api : API modules (see details below)
          |-- static : static files
@@ -73,12 +69,14 @@
                 |-- (similar to airlines)
 ~~~~
 
+  The sample Flight API endpoints are configured in this parent config file: `locota/web/api/locota/config.json`
+
 #### Internet connection and Proxy
 
   API middlewares will need to access http://node.locomote.com/code-task. [Request](https://www.npmjs.com/package/request) module is being used to make request.
 
   If network proxy is present, set it in the `HTTP_PROXY` and `HTTPS_PROXY` Environment Variables. Open `start.sh` and change the proxy if needed.
-  
+
   For example:
 ~~~~
   export HTTP_PROXY=http://username:password@proxy.internal.com.au:8080
@@ -87,7 +85,7 @@
 
 
 ### Client
-  
+
   Sample client is in ./web/static/client. `grunt` is used for task automation. `browsersync` is really helpful, but not required.
 
   Available grunt tasks:
