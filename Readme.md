@@ -12,8 +12,7 @@
 
 ### Notice
   * Start script will start the server and return. Use `./stop.sh` to stop the server
-  * The API Middleware will load the APIs and serve static files in path configred in `./bin/app.js`
-
+  * Start script will invoke `npm install` if neccessary, please make sure [NodeJS 6+](https://nodejs.org/en/) is installed
 
 ## Usage
 
@@ -56,7 +55,7 @@
 
 ~~~~
 
-Inspired by koa-boilerplat, each API will sit in its own folder, with its own `config.json`, which will inherit its parent `config.json`, following folder structure
+  Inspired by koa-boilerplate, each API will sit in its own folder, with its own `config.json`, which will inherit its parent `config.json`, following folder structure
 
 ~~~~
 
@@ -72,6 +71,18 @@ Inspired by koa-boilerplat, each API will sit in its own folder, with its own `c
                 |-- (similar to airlines)
           |-- search : search API
                 |-- (similar to airlines)
+~~~~
+
+  #### Internet connection and Proxy
+
+  API middlewares will need to access http://node.locomote.com/code-task. [Request](https://www.npmjs.com/package/request) module is being used to make request.
+
+  If network proxy is present, set it in the HTTP_PROXY and HTTPS_PROXY Environment Variables. Open `start.sh` and change the proxy if needed.
+  
+  For example:
+~~~~
+  export HTTP_PROXY=http://username:password@proxy.internal.com.au:8080
+  export HTTPS_PROXY=http://username:password@proxy.internal.com.au:8080
 ~~~~
 
   ### Client
