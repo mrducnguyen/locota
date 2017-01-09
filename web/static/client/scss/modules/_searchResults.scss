@@ -1,8 +1,9 @@
 .result-view {
 	padding-top: 20px;
-	
+
 	.date-range {
 		overflow-x: scroll;
+		overflow-y: hidden;
 	}
 
 	.nav-tabs {
