@@ -4,6 +4,9 @@
 	.date-range {
 		overflow-x: scroll;
 		overflow-y: hidden;
+		@include breakpoint(tablet) {
+			overflow-x: auto;
+		}
 	}
 
 	.nav-tabs {
@@ -50,6 +53,9 @@
 		@include breakpoint(tablet) {
 			thead {
 				display: table-header-group;
+				tr > td {
+					border-top-width: 0;
+				}
 			}
 
 			td {
