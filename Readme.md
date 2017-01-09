@@ -19,13 +19,13 @@
 
 ```
 
-  Usage: bin/start.sh [options]
+  Usage: ./start.sh [options]
 
-  Options:
+  Operation:
 
     test                  start mocha test
 
-  options which will be passed through to node app ./bin/app.js
+  Underlying Node script which will be run: ./bin/app.js  All options will be passed through to it
     -h, --help            output usage information
     -H, --host <host>     specify the host [0.0.0.0]
     -p, --port <port>     specify the port [3000]
