@@ -8,6 +8,8 @@ require('bootstrap-datepicker');
 
 require('select2');
 
+require('./modules/polyfill');
+
 // use only 1 global Handlebars object
 // this is the only way precompiled templates will work with custom helpers
 global.Handlebars = handlebars;

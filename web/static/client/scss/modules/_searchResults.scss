@@ -1,5 +1,9 @@
 .result-view {
 	padding-top: 20px;
+	
+	.date-range {
+		overflow-x: scroll;
+	}
 
 	.nav-tabs {
 		display: flex;
@@ -15,8 +19,53 @@
 	}
 
 	.result-table {
+		width: 100%;
+
+		thead {
+			display: none;
+		}
+
 		tr {
 			cursor: pointer;
+		}
+
+		td {
+			display: block;
+
+			&:first-child {
+				border-top-width: 0;
+			}
+
+			&:last-child {
+				border-bottom: 1px solid;
+				padding-bottom: 15px;
+			}
+		}
+
+		.column-header-responsive {
+			font-weight: bold;
+		}
+
+		@include breakpoint(tablet) {
+			thead {
+				display: table-header-group;
+			}
+
+			td {
+				display: table-cell;
+
+				&:first-child {
+					border-top-width: 1px;
+				}
+
+				&:last-child {
+					border-bottom: 1px solid #ddd;
+					padding-bottom: 8px;
+				}
+			}
+			.column-header-responsive {
+				display: none;
+			}
 		}
 	}
 

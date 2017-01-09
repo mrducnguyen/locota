@@ -31,21 +31,21 @@ Handlebars.registerPartial("_resultRow", Handlebars.template({"1":function(conta
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.airline : depth0)) != null ? stack1.name : stack1), depth0))
     + "\" title=\""
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.airline : depth0)) != null ? stack1.name : stack1), depth0))
-    + "\"></td>\r\n  <td>Flight number: <strong>"
+    + "\"></td>\r\n  <td><span class=\"column-header-responsive\">Flight: </span>Flight no: <strong>"
     + alias4(((helper = (helper = helpers.flightNum || (depth0 != null ? depth0.flightNum : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"flightNum","hash":{},"data":data}) : helper)))
     + "</strong><br><em>"
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.plane : depth0)) != null ? stack1.shortName : stack1), depth0))
-    + "</em></td>\r\n  <td>"
+    + "</em></td>\r\n  <td><span class=\"column-header-responsive\">Depart: </span>"
     + alias4((helpers.formatDateTimeString || (depth0 && depth0.formatDateTimeString) || alias2).call(alias1,((stack1 = (depth0 != null ? depth0.start : depth0)) != null ? stack1.dateTime : stack1),{"name":"formatDateTimeString","hash":{},"data":data}))
     + " ("
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.start : depth0)) != null ? stack1.timeZone : stack1), depth0))
-    + ")</td>\r\n  <td>"
+    + ")</td>\r\n  <td><span class=\"column-header-responsive\">Arrival: </span>"
     + alias4((helpers.formatDateTimeString || (depth0 && depth0.formatDateTimeString) || alias2).call(alias1,((stack1 = (depth0 != null ? depth0.finish : depth0)) != null ? stack1.dateTime : stack1),{"name":"formatDateTimeString","hash":{},"data":data}))
     + " ("
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.finish : depth0)) != null ? stack1.timeZone : stack1), depth0))
-    + ")</td>\r\n  <td>"
+    + ")</td>\r\n  <td><span class=\"column-header-responsive\">Duration: </span>"
     + alias4((helpers.formatDuration || (depth0 && depth0.formatDuration) || alias2).call(alias1,(depth0 != null ? depth0.durationMin : depth0),{"name":"formatDuration","hash":{},"data":data}))
-    + "</td>\r\n  <td>"
+    + "</td>\r\n  <td><span class=\"column-header-responsive\">Price: </span>"
     + alias4((helpers.formatAUD || (depth0 && depth0.formatAUD) || alias2).call(alias1,(depth0 != null ? depth0.price : depth0),{"name":"formatAUD","hash":{},"data":data}))
     + "</td>\r\n</tr>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

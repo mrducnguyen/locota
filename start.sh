@@ -23,6 +23,10 @@ if [ ! -d "node_modules" ]; then
 	fi
 fi
 
+# Set proxy if neccessary for locota server to access http://node.locomote.com/code-task
+export HTTP_PROXY=
+export HTTPS_PROXY=
+
 export NODE_PATH="."
 export NODE_ENV="stage"
 
