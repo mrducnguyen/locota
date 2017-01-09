@@ -1,10 +1,10 @@
 {{#flights}}
 <tr id="flight_{{key}}">
-  <td><img class="airline-logo" src="img/airlines/{{airline.code}}.png" alt="{{airline.name}}" title="{{airline.name}}"></td>
-  <td><span class="column-header-responsive">Flight: </span>Flight no: <strong>{{flightNum}}</strong><br><em>{{plane.shortName}}</em></td>
-  <td><span class="column-header-responsive">Depart: </span>{{formatDateTimeString start.dateTime}} ({{start.timeZone}})</td>
-  <td><span class="column-header-responsive">Arrival: </span>{{formatDateTimeString finish.dateTime}} ({{finish.timeZone}})</td>
-  <td><span class="column-header-responsive">Duration: </span>{{formatDuration durationMin}}</td>
-  <td><span class="column-header-responsive">Price: </span>{{formatAUD price}}</td>
+	<td><img class="airline-logo" src="img/airlines/{{airline.code}}.png" alt="{{airline.name}}" title="{{airline.name}}"></td>
+	<td><span class="column-header-responsive">Flight: </span>Flight no: <strong>{{flightNum}}</strong><br><em>{{plane.shortName}}</em></td>
+	<td><span class="column-header-responsive">Depart: </span>{{formatDateTimeString start.dateTime}} ({{start.timeZone}})</td>
+	<td><span class="column-header-responsive">Arrival: </span>{{formatDateTimeString finish.dateTime}} ({{finish.timeZone}})</td>
+	<td><span class="column-header-responsive">Duration: </span>{{formatDuration durationMin}}</td>
+	<td><span class="column-header-responsive">Price: </span>{{formatAUD price}}</td>
 </tr>
 {{/flights}}

@@ -5,26 +5,26 @@
 <div id="selectedFlights"></div>
 <div id="resultFilter" class="result-filter"></div>
 <div id="resultDateRange" class="date-range">
-  <ul class="nav nav-tabs nav-justified">
-    {{#each dateRange}}
-    <li role="presentation"{{#if active}} class="active"{{/if}}><a href="#{{dateYYMMDD}}" class="travel-date{{#if active}} disabled{{/if}}">{{formatDateFull date}}</a></li>
-    {{/each}}
-  </ul>
+	<ul class="nav nav-tabs nav-justified">
+		{{#each dateRange}}
+		<li role="presentation"{{#if active}} class="active"{{/if}}><a href="#{{dateYYMMDD}}" class="travel-date{{#if active}} disabled{{/if}}">{{formatDateFull date}}</a></li>
+		{{/each}}
+	</ul>
 </div>
 <div class="table-responsive result-table">
-  <table id="resultTable" class="table table-stripped table-hover">
-    <thead>
-      <tr>
-        <th width="15%">Airline</th>
-        <th width="15%">Flight</th>
-        <th width="22%">Depart</th>
-        <th width="22%">Arrive</th>
-        <th width="15%">Duration</th>
-        <th width="11%">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{> _resultRow }}
-    </tbody>
-  </table>
+	<table id="resultTable" class="table table-stripped table-hover">
+		<thead>
+			<tr>
+				<th width="15%">Airline</th>
+				<th width="15%">Flight</th>
+				<th width="22%">Depart</th>
+				<th width="22%">Arrive</th>
+				<th width="15%">Duration</th>
+				<th width="11%">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{> _resultRow }}
+		</tbody>
+	</table>
 </div>

@@ -1,33 +1,33 @@
 .search-view {
-  h1 {
-    margin-bottom: 15px;
-  }
-  .search-form {
+	h1 {
+		margin-bottom: 15px;
+	}
+	.search-form {
 
-    @include breakpoint(laptop) {
-      .popover {
-        min-width: 400px;
-      }
-    }
+		@include breakpoint(laptop) {
+			.popover {
+				min-width: 400px;
+			}
+		}
 
-    .form-group {
-      position: relative;
-    }
+		.form-group {
+			position: relative;
+		}
 
-    .control-label {
-      display: block;
-    }
+		.control-label {
+			display: block;
+		}
 
-    .form-control {
-      min-width: 200px;
-    }
-  }
+		.form-control {
+			min-width: 200px;
+		}
+	}
 
-  .popover-content {
-    .list-group-item {
-      h4 {
-        margin-bottom: 0;
-      }
-    }
-  }
+	.popover-content {
+		.list-group-item {
+			h4 {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
