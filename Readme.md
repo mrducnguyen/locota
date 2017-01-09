@@ -34,7 +34,7 @@
 
 ## Structure
 
-  ### Server
+### Server
 
   Resources and associated tests are defined in ./web/api by default
 
@@ -77,7 +77,7 @@
 
   API middlewares will need to access http://node.locomote.com/code-task. [Request](https://www.npmjs.com/package/request) module is being used to make request.
 
-  If network proxy is present, set it in the HTTP_PROXY and HTTPS_PROXY Environment Variables. Open `start.sh` and change the proxy if needed.
+  If network proxy is present, set it in the `HTTP_PROXY` and `HTTPS_PROXY` Environment Variables. Open `start.sh` and change the proxy if needed.
   
   For example:
 ~~~~
@@ -85,7 +85,8 @@
   export HTTPS_PROXY=http://username:password@proxy.internal.com.au:8080
 ~~~~
 
-  ### Client
+
+### Client
   
   Sample client is in ./web/static/client. `grunt` is used for task automation. `browsersync` is really helpful, but not required.
 
